@@ -14,11 +14,6 @@ public class Formatter {
     public Formatter() {
     }
 
-    public static void main(String[] args) throws IOException {
-        Formatter formatter = new Formatter();
-        formatter.creatingRacers();
-    }
-
     public HashMap<String, Racer> creatingRacers() throws IOException {
         HashMap<String,Double> mapStart = inputFileStart();
         HashMap<String,Double> mapEnd = inputFileEnd();
