@@ -1,4 +1,4 @@
-package foxminded.com.service.Buffer;
+package foxminded.com.service.bufferReader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,7 +10,7 @@ public class BufferReader {
     public BufferReader() {
     }
 
-    public static HashMap<String, Double> inputFileEnd() throws IOException {
+    public static HashMap<String, Double> readingFileEnd() throws IOException {
         HashMap<String, Double> mapEnd = new HashMap<String, Double>();
         try (BufferedReader buffer = new BufferedReader(new FileReader("end.log"))) {
             String line = buffer.readLine();
@@ -27,7 +27,7 @@ public class BufferReader {
         return mapEnd;
     }
 
-    public static HashMap<String, Double> inputFileStart() throws IOException {
+    public static HashMap<String, Double> readingFileStart() throws IOException {
         HashMap<String, Double> mapStart = new HashMap<String, Double>();
         try (BufferedReader buffer = new BufferedReader(new FileReader("start.log"))) {
             String line = buffer.readLine();
@@ -39,12 +39,12 @@ public class BufferReader {
                 line = buffer.readLine();
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            throw new IOException();
         }
         return mapStart;
     }
 
-    public static HashMap<String, String> inputFileAbbreviations() throws IOException {
+    public static HashMap<String, String> readingFileAbbreviations() throws IOException {
         HashMap<String, String> mapAbbreviations = new HashMap<String, String>();
         try (BufferedReader buffer = new BufferedReader(new FileReader("abbreviations.txt"))) {
             String line = buffer.readLine();
@@ -54,7 +54,7 @@ public class BufferReader {
                 line = buffer.readLine();
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+           throw new IOException();
         }
         return mapAbbreviations;
     }

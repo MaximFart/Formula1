@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static foxminded.com.service.Buffer.BufferReader.*;
+import static foxminded.com.service.bufferReader.BufferReader.*;
 
 
 public class Formatter {
@@ -15,9 +15,9 @@ public class Formatter {
     }
 
     public HashMap<String, Racer> creatingRacers() throws IOException {
-        HashMap<String,Double> mapStart = inputFileStart();
-        HashMap<String,Double> mapEnd = inputFileEnd();
-        HashMap<String,String> mapAbbreviations = inputFileAbbreviations();
+        HashMap<String,Double> mapStart = readingFileStart();
+        HashMap<String,Double> mapEnd = readingFileEnd();
+        HashMap<String,String> mapAbbreviations = readingFileAbbreviations();
         HashMap<String, Racer> mapRacers = new HashMap<>();
         for (Map.Entry<String, String> entry : mapAbbreviations.entrySet()) {
             String[] array = entry.getValue().split("_");

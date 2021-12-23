@@ -1,5 +1,7 @@
 package foxminded.com.service.racer;
 
+import java.util.Objects;
+
 public class Racer {
 
     private String company;
@@ -38,4 +40,21 @@ public class Racer {
     public void setRoundTime(double roundTime) {
         this.roundTime = roundTime;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Racer racer = (Racer) obj;
+        return Objects.equals(company, racer.company) && Double.compare(roundTime, racer.roundTime) == 0 && Objects.equals(name, racer.name);
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(company, name, roundTime);
+    }
+
 }
