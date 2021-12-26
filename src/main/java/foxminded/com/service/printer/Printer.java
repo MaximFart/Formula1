@@ -22,12 +22,7 @@ public class Printer {
     public String printingReport() throws IOException {
         StringBuilder output = new StringBuilder();
         StringBuilder space = new StringBuilder("");
-        List<Double> roundTimeList = new ArrayList<Double>();
-        for (Map.Entry<String, Racer> entry : formatter.creatingRacers().entrySet()) {
-            roundTimeList.add(entry.getValue().getRoundTime());
-        }
-        roundTimeList.sort(Double::compareTo);
-
+        List<Double> roundTimeList =  formatter.creatingRacers().values().stream().map(Racer::getRoundTime).sorted().collect(Collectors.toList());
         int index = 0;
         for (Map.Entry<String, Racer> entry : formatter.creatingRacers().entrySet()) {
             if (index == 16) {

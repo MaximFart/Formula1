@@ -29,7 +29,7 @@ public class Racer {
         return name;
     }
 
-    public void setLastName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -47,6 +47,15 @@ public class Racer {
         if (obj == null || getClass() != obj.getClass()) return false;
         Racer racer = (Racer) obj;
         return Objects.equals(company, racer.company) && Double.compare(roundTime, racer.roundTime) == 0 && Objects.equals(name, racer.name);
+    }
+
+    @Override
+    public String toString() {
+        return "Racer{" +
+                "company='" + company + '\'' +
+                ", name='" + name + '\'' +
+                ", roundTime=" + roundTime +
+                '}';
     }
 
     @Override
