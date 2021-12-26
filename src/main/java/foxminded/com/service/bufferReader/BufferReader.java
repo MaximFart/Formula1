@@ -17,7 +17,6 @@ public class BufferReader {
             while (line != null) {
                 String[] temp = line.split("_");
                 String[] time = temp[1].substring(3, temp[1].length()).split(":");
-                double abc = Double.parseDouble(time[0]) * 60 + Double.parseDouble(time[1]);
                 mapEnd.put(temp[0].substring(0, 3), Double.parseDouble(time[0]) * 60 + Double.parseDouble(time[1]));
                 line = buffer.readLine();
             }

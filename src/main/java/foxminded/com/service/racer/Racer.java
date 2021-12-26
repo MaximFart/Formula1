@@ -41,7 +41,6 @@ public class Racer {
         this.roundTime = roundTime;
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -49,8 +48,6 @@ public class Racer {
         Racer racer = (Racer) obj;
         return Objects.equals(company, racer.company) && Double.compare(roundTime, racer.roundTime) == 0 && Objects.equals(name, racer.name);
     }
-
-
 
     @Override
     public int hashCode() {

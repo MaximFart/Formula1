@@ -4,7 +4,8 @@ import foxminded.com.service.formatter.Formatter;
 import foxminded.com.service.racer.Racer;
 
 import java.io.IOException;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Printer {
     private Formatter formatter;
@@ -21,7 +22,17 @@ public class Printer {
     public String printingReport() throws IOException {
         StringBuilder output = new StringBuilder();
         StringBuilder space = new StringBuilder("");
+        List<Double> roundTimeList = new ArrayList<Double>();
         for (Map.Entry<String, Racer> entry : formatter.creatingRacers().entrySet()) {
+            roundTimeList.add(entry.getValue().getRoundTime());
+        }
+        roundTimeList.sort(Double::compareTo);
+
+        int index = 0;
+        for (Map.Entry<String, Racer> entry : formatter.creatingRacers().entrySet()) {
+            if (index == 16) {
+                output.append("--------------------------------------------------------" + "\n");
+            }
             output.append(entry.getValue().getName());
             for (int i = 0; i < MAX_CHARS_NAME - entry.getValue().getName().length(); i++) {
                 output.append(" ");
@@ -30,7 +41,8 @@ public class Printer {
             for (int i = 0; i < MAX_CHARS_COMPANY - entry.getValue().getCompany().length(); i++) {
                 output.append(" ");
             }
-            output.append(" | " + entry.getValue().getRoundTime() + "\n");
+            output.append(" | " + String.format("%d:%06.3f", (int) (roundTimeList.get(index) / 60), roundTimeList.get(index) - 60) + "\n");
+            index++;
         }
         return output.toString();
     }
