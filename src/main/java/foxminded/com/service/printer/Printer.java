@@ -1,7 +1,7 @@
 package foxminded.com.service.printer;
 
 import foxminded.com.service.formatter.Formatter;
-import foxminded.com.service.racer.Racer;
+import foxminded.com.entity.racer.Racer;
 
 import java.io.IOException;
 import java.util.*;
@@ -22,7 +22,8 @@ public class Printer {
     public String printingReport() throws IOException {
         StringBuilder output = new StringBuilder();
         StringBuilder space = new StringBuilder("");
-        List<Double> roundTimeList =  formatter.creatingRacers().values().stream().map(Racer::getRoundTime).sorted().collect(Collectors.toList());
+        List<Double> roundTimeList =  formatter.creatingRacers().values().stream()
+                .map(Racer::getRoundTime).sorted().collect(Collectors.toList());
         int index = 0;
         for (Map.Entry<String, Racer> entry : formatter.creatingRacers().entrySet()) {
             if (index == 16) {

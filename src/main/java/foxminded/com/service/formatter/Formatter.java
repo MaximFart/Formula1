@@ -1,12 +1,12 @@
 package foxminded.com.service.formatter;
 
-import foxminded.com.service.racer.Racer;
+import foxminded.com.entity.racer.Racer;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static foxminded.com.service.bufferReader.BufferReader.*;
+import static foxminded.com.service.InputFileReader.InputFileReader.*;
 
 
 public class Formatter {

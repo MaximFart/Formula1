@@ -1,4 +1,4 @@
-package foxminded.com.service.racer;
+package foxminded.com.entity.racer;
 
 import java.util.Objects;
 

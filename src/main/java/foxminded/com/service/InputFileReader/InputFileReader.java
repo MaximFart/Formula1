@@ -1,13 +1,13 @@
-package foxminded.com.service.bufferReader;
+package foxminded.com.service.InputFileReader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class BufferReader {
+public class InputFileReader {
 
-    public BufferReader() {
+    public InputFileReader() {
     }
 
     public static HashMap<String, Double> readingFileEnd() throws IOException {
@@ -21,7 +21,7 @@ public class BufferReader {
                 line = buffer.readLine();
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            throw new IOException();
         }
         return mapEnd;
     }
