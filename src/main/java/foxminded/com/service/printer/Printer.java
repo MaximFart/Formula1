@@ -20,6 +20,7 @@ public class Printer {
     }
 
     public String printingReport() throws IOException {
+        if (formatter.creatingRacers() == null) throw new NullPointerException("Incorrect value");
         StringBuilder output = new StringBuilder();
         StringBuilder space = new StringBuilder("");
         List<Double> roundTimeList =  formatter.creatingRacers().values().stream()
