@@ -12,16 +12,16 @@ public class InputFileReaderTest {
 
     @Test
     void process_shouldIsNotEmptyReadingFileAbbreviations_whenInputFileAbbreviations() throws IOException {
-        assertFalse(readingFileAbbreviations().isEmpty());
+        assertEquals(true, !readingFileAbbreviations( "abbreviations.txt").isEmpty());
     }
 
     @Test
     void process_shouldIsNotEmptyReadingFileStart_whenInputFileStart() throws IOException {
-        assertFalse(readingFileStart().isEmpty());
+        assertEquals(true, !readingFileStart("start.log").isEmpty());
     }
 
     @Test
     void process_shouldIsNotEmptyReadingFileEnd_whenInputFileEnd() throws IOException {
-        assertFalse(readingFileEnd().isEmpty());
+        assertEquals(true, !readingFileEnd("end.log").isEmpty());
     }
 }

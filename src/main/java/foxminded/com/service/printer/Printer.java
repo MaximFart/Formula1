@@ -20,13 +20,13 @@ public class Printer {
     }
 
     public String printingReport() throws IOException {
-        if (formatter.creatingRacers() == null) throw new NullPointerException("Incorrect value");
+        if (formatter.creatingRacers("start.log","end.log", "abbreviations.txt") == null) throw new NullPointerException("Incorrect value");
         StringBuilder output = new StringBuilder();
         StringBuilder space = new StringBuilder("");
-        List<Double> roundTimeList =  formatter.creatingRacers().values().stream()
+        List<Double> roundTimeList =  formatter.creatingRacers("start.log","end.log", "abbreviations.txt").values().stream()
                 .map(Racer::getRoundTime).sorted().collect(Collectors.toList());
         int index = 0;
-        for (Map.Entry<String, Racer> entry : formatter.creatingRacers().entrySet()) {
+        for (Map.Entry<String, Racer> entry : formatter.creatingRacers("start.log","end.log", "abbreviations.txt").entrySet()) {
             if (index == BEST_RACERS) {
                 output.append("--------------------------------------------------------" + "\n");
             }

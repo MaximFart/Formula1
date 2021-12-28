@@ -15,7 +15,7 @@ public class PrinterTest {
     void process_shouldThrowNullPointerException_whenInputNull() throws IOException {
         Formatter formatterMock = mock(Formatter.class);
         Printer printer = new Printer(formatterMock);
-        when(formatterMock.creatingRacers()).thenReturn(null);
+        when(formatterMock.creatingRacers("start.log","end.log", "abbreviations.txt")).thenReturn(null);
         assertThrows(NullPointerException.class, printer::printingReport);
     }
 }

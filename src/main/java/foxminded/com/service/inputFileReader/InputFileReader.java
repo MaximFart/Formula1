@@ -10,9 +10,9 @@ public class InputFileReader {
     public InputFileReader() {
     }
 
-    public static HashMap<String, Double> readingFileEnd() throws IOException {
+    public static HashMap<String, Double> readingFileEnd(String path) throws IOException {
         HashMap<String, Double> mapEnd = new HashMap<String, Double>();
-        try (BufferedReader buffer = new BufferedReader(new FileReader("end.log"))) {
+        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {
             String line = buffer.readLine();
             while (line != null) {
                 String[] temp = line.split("_");
@@ -26,9 +26,9 @@ public class InputFileReader {
         return mapEnd;
     }
 
-    public static HashMap<String, Double> readingFileStart() throws IOException {
+    public static HashMap<String, Double> readingFileStart(String path) throws IOException {
         HashMap<String, Double> mapStart = new HashMap<String, Double>();
-        try (BufferedReader buffer = new BufferedReader(new FileReader("start.log"))) {
+        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {
             String line = buffer.readLine();
             while (line != null) {
                 String[] data = line.split("_");
@@ -43,9 +43,9 @@ public class InputFileReader {
         return mapStart;
     }
 
-    public static HashMap<String, String> readingFileAbbreviations() throws IOException {
+    public static HashMap<String, String> readingFileAbbreviations(String path) throws IOException {
         HashMap<String, String> mapAbbreviations = new HashMap<String, String>();
-        try (BufferedReader buffer = new BufferedReader(new FileReader("abbreviations.txt"))) {
+        try (BufferedReader buffer = new BufferedReader(new FileReader(path))) {
             String line = buffer.readLine();
             while (line != null) {
                 String[] data = line.split("_");
