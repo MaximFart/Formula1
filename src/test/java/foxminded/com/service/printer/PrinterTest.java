@@ -1,7 +1,6 @@
 package foxminded.com.service.printer;
 
 import foxminded.com.service.formatter.Formatter;
-import foxminded.com.service.formatter.FormatterTest;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

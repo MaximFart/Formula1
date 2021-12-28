@@ -12,6 +12,7 @@ public class Printer {
     private final int MAX_CHARS_NAME = 17;
     private final int MAX_CHARS_COMPANY = 25;
     private final int BEST_RACERS = 16;
+
     public Printer() {
     }
 

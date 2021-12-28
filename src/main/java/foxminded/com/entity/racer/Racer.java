@@ -3,7 +3,6 @@ package foxminded.com.entity.racer;
 import java.util.Objects;
 
 public class Racer {
-
     private String company;
     private String name;
     private double roundTime;
