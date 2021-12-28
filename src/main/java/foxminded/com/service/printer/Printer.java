@@ -11,7 +11,7 @@ public class Printer {
     private Formatter formatter;
     private final int MAX_CHARS_NAME = 17;
     private final int MAX_CHARS_COMPANY = 25;
-
+    private final int BEST_RACERS = 16;
     public Printer() {
     }
 
@@ -27,7 +27,7 @@ public class Printer {
                 .map(Racer::getRoundTime).sorted().collect(Collectors.toList());
         int index = 0;
         for (Map.Entry<String, Racer> entry : formatter.creatingRacers().entrySet()) {
-            if (index == 16) {
+            if (index == BEST_RACERS) {
                 output.append("--------------------------------------------------------" + "\n");
             }
             output.append(entry.getValue().getName());

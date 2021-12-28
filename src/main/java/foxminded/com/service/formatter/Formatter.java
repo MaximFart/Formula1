@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static foxminded.com.service.InputFileReader.InputFileReader.*;
+import static foxminded.com.service.inputFileReader.InputFileReader.*;
 
 
 public class Formatter {

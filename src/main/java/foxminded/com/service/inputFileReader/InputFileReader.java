@@ -1,4 +1,4 @@
-package foxminded.com.service.InputFileReader;
+package foxminded.com.service.inputFileReader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
